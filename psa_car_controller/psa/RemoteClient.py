@@ -212,13 +212,13 @@ class RemoteClient:
             time.sleep(60)
         return None
 
-    def horn(self, vin, count):
-        msg = self.mqtt_request(vin, {"nb_horn": count, "action": "activate"}, "/Horn")
+    def horn(self, vin):
+        msg = self.mqtt_request(vin, {"nb_horn": 3, "action": "activate"}, "/Horn")
         logger.info(msg)
         self.mqtt_client.publish(msg)
 
-    def lights(self, vin, duration: int):
-        msg = self.mqtt_request(vin, {"action": "activate", "duration": duration}, "/Lights")
+    def lights(self, vin):
+        msg = self.mqtt_request(vin, {"action": "activate", "duration": 10}, "/Lights")
         logger.info(msg)
         self.publish(msg)
 
@@ -230,13 +230,8 @@ class RemoteClient:
         self.publish(msg)
         return True
 
-    def lock_door(self, vin, lock: bool):
-        if lock:
-            value = "lock"
-        else:
-            value = "unlock"
-
-        msg = self.mqtt_request(vin, {"action": value}, "/Doors")
+    def lock_door(self, vin, lock):
+        msg = self.mqtt_request(vin, {"action": lock}, "/Doors")
         logger.info(msg)
         self.publish(msg)
         return True
