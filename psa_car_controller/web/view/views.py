@@ -249,6 +249,27 @@ def after_request(response):
     header['Access-Control-Allow-Origin'] = '*'
     return response
 
+@app.route('/lights/<string:vin>')
+def lights(vin):
+    try:
+        return jsonify(APP.myp.remote_client.lights(vin))
+    except RateLimitException:
+        return jsonify({"error": "Lights rate limit exceeded"})
+
+@app.route('/lock_door/<string:vin>/<string:lock>')
+# String has to be "Lock" to lock the doors and "Unlock" to unlock the doors
+def lock_door(vin, lock):
+    try:
+        return jsonify(APP.myp.remote_client.lock_door(vin, lock))
+    except RateLimitException:
+        return jsonify({"error": "Locks rate limit exceeded"})
+
+@app.route('/horn/<string:vin>')
+def horn(vin):
+    try:
+        return jsonify(APP.myp.remote_client.horn(vin))
+    except RateLimitException:
+        return jsonify({"error": "Horn rate limit exceeded"})
 
 def update_trips():
     global trips, chargings, cached_layout, min_date, max_date, min_millis, max_millis, step, marks
