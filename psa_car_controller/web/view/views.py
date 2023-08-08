@@ -257,7 +257,7 @@ def lights(vin):
         return jsonify({"error": "Lights rate limit exceeded"})
 
 @app.route('/lock_door/<string:vin>/<string:lock>')
-# String has to be "Lock" to lock the doors and "Unlock" to unlock the doors
+# String has to be "lock" to lock the doors and "unlock" to unlock the doors
 def lock_door(vin, lock):
     try:
         return jsonify(APP.myp.remote_client.lock_door(vin, lock))
