@@ -5,6 +5,6 @@ services:
     image: DavidFFerreira/psa_car_controller:latest
     restart: unless-stopped
     ports:
-      - "5000:5000"
+      - "5001:5001"
     volumes:
       - ./config:/config
