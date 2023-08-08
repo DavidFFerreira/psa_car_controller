@@ -6,13 +6,14 @@
 ### This is a python program to control and get information from a PSA car.
 I test it with a Peugeot e-208, but it works with others PSA vehicles (Citroen, Opel, Vauxhall, DS).
 
-With this app  you will be able to :
+With this app you will be able to :
  - get the status of the car (battery level for electric vehicle, position ... )
  - start and stop the charge
  - set a charge threshold to limit the battery level to a certain percentage
  - set a stop hour to charge your vehicle only on off-peak hours
  - control air conditioning
- - control lights and horn if your vehicle is compatible (mine isn't) 
+ - control lights and horn if your vehicle is compatible
+ - unlock and lock your vehicle if your vehicle is compatible
  - get consumption statistic
  - visualize your trips on a map or in a table
  - get the list of car charging  
@@ -59,6 +60,14 @@ The official api is documented [here](https://developer.groupe-psa.io/webapi/b2c
     2.8 Change charge hour (for example: set it to 22h30)
     http://127.0.0.1:5000/charge_hour?vin=YOURVIN&hour=22&minute=30
 
+    2.9 Sound the horn three times
+    http://localhost:5000/horn/YOURVIN
+
+    2.10 Flash the lights for 10 seconds
+    http://localhost:5000/lights/YOURVIN
+
+    2.11 Unlock/lock the doors
+    http://localhost:5000/lock_door/YOURVIN/lock or unlock
 
 ## III. Use the dashboard
 
@@ -100,4 +109,3 @@ If you need information to contribute or edit this program go [here](docs/Develo
 If you want to thank me for my work :smile:
 
 [![donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate?hosted_button_id=SM652WPXFNCXS)
-
