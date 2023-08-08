@@ -13,7 +13,7 @@ EXPOSE 5000
 FROM debian:bullseye-slim
 ARG PYTHON_DEP
 WORKDIR /config
-ENV PSACC_BASE_PATH=/ PSACC_PORT=5000 PSACC_OPTIONS="-c -r --web-conf" PSACC_CONFIG_DIR="/config" PYTHONPATH="/app"
+ENV PSACC_BASE_PATH=/ PSACC_PORT=5001 PSACC_OPTIONS="-c -r --web-conf" PSACC_CONFIG_DIR="/config" PYTHONPATH="/app"
 COPY --from=builder /var/lib/apt /var/lib/apt
 COPY --from=builder /var/cache/apt/ /var/cache/apt/
 COPY --from=builder /usr/local/lib /usr/local/lib
