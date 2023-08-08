@@ -2,10 +2,10 @@
 name = "psa-car-controller"
 version = "0.0.0"
 description = "This is a python program to control a psa car with connected_car v4 api."
-authors = ["Florian Bezannier <florian.bezannier@hotmail.fr>"]
+authors = ["David Ferreira <david.ferreira@devpromp.pt>"]
 license = "GPL-3.0"
-homepage = "https://github.com/flobz/psa_car_controller"
-repository = "https://github.com/flobz/psa_car_controller"
+homepage = "https://github.com/DavidFFerreira/psa_car_controller"
+repository = "https://github.com/DavidFFerreira/psa_car_controller"
 include = [
     "LICENSE",
 ]
