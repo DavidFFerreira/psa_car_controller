@@ -7,7 +7,7 @@ A containerised version of the psa_car_controller.
 Once the container is running, the configuration of the psa_car_controller app is near-identical classic Linux/Windows installtion.
 
 ### Installation
-Create the container, detached, exposing port 5000, and mapping config folder on your host to /config inside the container:
+Create the container, detached, exposing port 5001, and mapping config folder on your host to /config inside the container:
 
 #### With docker-compose
 ```
