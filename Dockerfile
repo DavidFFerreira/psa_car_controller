@@ -8,7 +8,7 @@ RUN  BUILD_DEP='python3-pip python3-setuptools python3-dev libblas-dev liblapack
 RUN pip3 install --upgrade pip && mkdir psa-car-controller && pip3 install poetry
 COPY ./dist/psa_car_controller-${PSACC_VERSION}-py3-none-any.whl .
 RUN pip3 install --no-cache-dir psa_car_controller-${PSACC_VERSION}-py3-none-any.whl
-EXPOSE 5000
+EXPOSE 5001
 
 FROM debian:bullseye-slim
 ARG PYTHON_DEP
