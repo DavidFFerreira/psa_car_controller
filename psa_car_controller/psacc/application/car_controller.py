@@ -28,7 +28,7 @@ def parse_args():
     parser.add_argument("-d", "--debug", help="enable debug", const=10, default=20, nargs='?',
                         metavar='Debug level number or name')
     parser.add_argument("-l", "--listen", help="change server listen address", default="127.0.0.1", metavar="IP")
-    parser.add_argument("-p", "--port", help="change server listen port", default="5000")
+    parser.add_argument("-p", "--port", help="change server listen port", default="5001")
     parser.add_argument("-r", "--record", help="save vehicle data to db", action='store_true')
     parser.add_argument("-R", "--refresh", help="refresh vehicles status every x min", type=int)
     parser.add_argument("-m", "--mail", default=environ.get('USER_EMAIL', None), help="set the email address")
